@@ -1,8 +1,13 @@
+"use client";
 import Navbar from '@/components/shared/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import Footer from '@/components/shared/Footer'
-import Banner from '@/components/shared/Banner'
+
+import { Provider } from 'react-redux'
+import { store } from './Redux/store'
+
+import Banner from '@/components/shared/Banner';
 
 
 export const metadata: Metadata = {
@@ -15,14 +20,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
-    <html lang="en">
+    <Provider store={store}>
+
+    <html data-theme="black" lang="en">
       <body >
          <Navbar></Navbar>
          <Banner></Banner>
-        { children}
+         { children}
        <Footer></Footer>
         </body>
     </html>
+    </Provider>
   )
 }
