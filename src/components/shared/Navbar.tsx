@@ -5,6 +5,7 @@ import avatar from"../../../public/Assets/pexels-photo-2379004.jpeg";
 import { GiftIcon } from '@heroicons/react/solid';
 import { BellIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
+import Link from "next/link";
 const Navbar = () => {
    
   return (
@@ -18,9 +19,9 @@ const Navbar = () => {
           className="cursor-pointer object-contain"
         />
         <ul className="hidden space-x-10 md:flex">
-          <li className="headerLink ">HOME</li>
-          <li className="headerLink">TV SHOW</li>
-          <li className="headerLink">MOVIES</li>
+        <Link href="/"><li className="headerLink ">HOME</li></Link>  
+        <Link href="/Tv"><li className="headerLink">TV SHOW</li></Link>
+        <Link href="/movie"><li className="headerLink">MOVIES</li></Link>
           <li className="headerLink">NEW</li>
         </ul>
       </div>

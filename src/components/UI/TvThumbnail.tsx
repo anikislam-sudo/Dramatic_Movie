@@ -4,7 +4,7 @@ import { baseUrl } from '../../../constants/movieUrl';
 import { Movie } from '../../../utills/Typing';
 import { StarIcon } from '@heroicons/react/solid'; // Import the StarIcon from heroicons
 
-const TvThumbnail = ({ tv }: { tv: Movie }) => {
+const TvThumbnail = ({ tv,id }: { tv: Movie,id:number }) => {
   return (
     <div className="mt-5 mb-5 relative h-80 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-96 md:min-w-[260px] md:hover:scale-105">
       <div className="bg-white h-full w-full rounded-lg shadow-md overflow-hidden">

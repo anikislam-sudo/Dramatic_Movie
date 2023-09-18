@@ -9,23 +9,38 @@ export const apiSlice = createApi({
 
   endpoints: (builder) => ({
     getMovies: builder.query({
-      query: () =>{
-        return{
-            url:`/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
-            method:"get"
-        }
-      } 
+      query: () => {
+        return {
+          url: `/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          method: "get",
+        };
+      },
     }),
     getTVSeries: builder.query({
       query: () => {
         return {
           url: `/discover/tv?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
-          method: "get"
-        }
-      }
+          method: "get",
+        };
+      },
+    }),
+    getMovieDetails: builder.query({
+      query: (id: string) => {
+        return {
+          url: `/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          method: "get",
+        };
+      },
+    }),
+    getTvDetails: builder.query({
+      query: (id: string) => {
+        return {
+          url: `/tv/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          method: "get",
+        };
+      },
     }),
   }),
 });
 
-
-export const { useGetMoviesQuery,useGetTVSeriesQuery } = apiSlice;
+export const { useGetMoviesQuery, useGetTVSeriesQuery,useGetMovieDetailsQuery,useGetTvDetailsQuery } = apiSlice;

@@ -18,10 +18,17 @@ const Banner = () => {
         }
     }, [data]);
 
+    const gradientBackground = {
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.3)), url(${baseUrl}${movie?.backdrop_path || movie?.poster_path})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+    };
+
     return (
         <>
             {movie && (
-                <div className="relative bg-cover bg-no-repeat bg-center h-[95vh] w-screen" style={{ backgroundImage: `url(${baseUrl}${movie.backdrop_path || movie.poster_path})` }}>
+                <div className="relative h-[95vh] w-screen" style={gradientBackground}>
                     <div className="container mx-auto flex flex-col space-y-2 py-4 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
                         <h1 className="text-2xl font-bold md:text-4xl lg:text-5xl text-white">{movie.title}</h1>
                         <p className="max-w-xs text-sm sm:pt-2 text-shadow-md md:max-w-lg md:text-lg lg:max-w-4xl lg:text-lg text-white">{movie.overview}</p>

@@ -1,9 +1,11 @@
+'use client';
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Thumbnail from '../../components/UI/Thumbnail';
 import { useGetMoviesQuery } from '@/app/Redux/api/api';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import { Movie } from '../../../utills/Typing';
+import Link from 'next/link';
 
 const Row = () => {
   const { data, error, isLoading } = useGetMoviesQuery(undefined);
@@ -51,8 +53,10 @@ const Row = () => {
           }}
         >
           {data &&
-            data.results.map((movie: Movie) => (
-              <Thumbnail key={movie.id} movie={movie} />
+            data.results.map((movie: Movie,i:number) => (
+              <Link key={i} href={`movie/${movie.id}`}>
+              <Thumbnail key={movie.id} id={movie.id} movie={movie} />
+              </Link>
             ))}
         </div>
 

@@ -26,7 +26,7 @@ const Homepage = () => {
 
   return (
     <div className=' '>
-    
+    <Banner></Banner>
    <Row></Row>
    <Tv></Tv>
     </div>

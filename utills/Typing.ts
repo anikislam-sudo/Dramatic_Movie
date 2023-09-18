@@ -20,7 +20,10 @@ export interface Movie {
     vote_count: number;
     results:[];
     name:string;
-    first_air_date:string
+    first_air_date:string;
+    homepage:string
+    number_of_episodes:number
+    number_of_seasons:number
 }
 export type MovieArray = Movie[];
 export interface Element {

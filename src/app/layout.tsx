@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: any }) {
             
               <Navbar></Navbar>
               
-              <Banner></Banner>
+              
               {children}
               <Footer></Footer>
             </RecoilRoot>
