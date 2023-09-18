@@ -26,6 +26,8 @@ export interface Movie {
     number_of_episodes:number
     number_of_seasons:number
     original_name:string
+    error:string
+    status:number
 }
 export type MovieArray = Movie[];
 export interface Element {

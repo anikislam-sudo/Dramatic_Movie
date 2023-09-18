@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Movie } from "../../../utils/Typing";
+
 import { FaImdb, FaPlay } from "react-icons/fa";
 import { PlusCircleIcon } from "@heroicons/react/solid";
 import { baseUrl } from "../../../constants/movieUrl";
+import { Movie } from "../../../utills/Typing";
 
 const TvShowDetails = ({ data, id }: { data: Movie, id: number }) => {
   const { name, number_of_seasons, original_name, number_of_episodes, vote_average, backdrop_path, poster_path, overview, homepage } = data;

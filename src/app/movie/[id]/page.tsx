@@ -5,14 +5,28 @@ import { Movie } from "../../../../utills/Typing";
 import MovieDetails from "@/components/UI/MovieDetails";
 
 const MovieDetailsPage = ({ params }: { params: Movie }) => {
-  const { data, error, isLoading } = useGetMovieDetailsQuery(params.id);
+  const { data, error, isLoading } = useGetMovieDetailsQuery(params.id.toString());
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    if ('status' in error) {
+      // you can access all properties of `FetchBaseQueryError` here
+      const errMsg = 'error' in error ? error.error : JSON.stringify(error.data)
+
+      return (
+        <div>
+          <div>An error has occurred:</div>
+          <div>{errMsg}</div>
+        </div>
+      )
+    }
+    else {
+        // you can access all properties of `SerializedError` here
+        return <div>{error.message}</div>
+    }
   }
 
   return (
