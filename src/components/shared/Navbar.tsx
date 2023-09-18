@@ -39,8 +39,8 @@ const Navbar = () => {
             className="pl-10 pr-4 py-2 h-8 rounded-full w-72 border   bg-white text-white hidden sm:inline"
           />
         </div>
-        <GiftIcon className="w-6 h-6" />
-        <BellIcon  className="w-6 h-6" ></BellIcon>
+        <GiftIcon className="w-6 headerLink  h-6" />
+        <BellIcon  className="w-6 headerLink h-6" ></BellIcon>
         <div className="w-10 h-10 rounded-full overflow-hidden">
       <Image
         src={avatar}
