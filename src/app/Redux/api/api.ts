@@ -16,8 +16,16 @@ export const apiSlice = createApi({
         }
       } 
     }),
+    getTVSeries: builder.query({
+      query: () => {
+        return {
+          url: `/discover/tv?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          method: "get"
+        }
+      }
+    }),
   }),
 });
 
 
-export const { useGetMoviesQuery } = apiSlice;
+export const { useGetMoviesQuery,useGetTVSeriesQuery } = apiSlice;

@@ -13,10 +13,8 @@
   .translate-all {
     transform: translate(0, 0);
   }
+  
 
-}
-.bannerButton {
-  @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
 }
 
 /*custom classNames */
@@ -26,4 +24,22 @@
     @apply cursor-pointer text-sm font-bold  text-[#A1B1CB] transition duration-[.4s]
   hover:text-white
   }
+  .bannerButton {
+    @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
+  }
+
+  
 }
+
+div::-webkit-scrollbar {
+  width: 0.5rem; /* You can adjust the width if needed */
+}
+
+div::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+

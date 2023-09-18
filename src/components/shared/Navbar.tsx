@@ -8,7 +8,7 @@ import { useState } from 'react';
 const Navbar = () => {
    
   return (
-    <header className="bg-gradient-to-r from-[#000000] to-[#6650A5] w-full h-20">
+    <header className=" bg-gradient-to-r from-[#000000] to-[#6650A5] w-full h-20">
       <div className="flex items-center space-x-2 md:space-x-10">
         <Image
           src={logo}
