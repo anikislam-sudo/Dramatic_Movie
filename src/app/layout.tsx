@@ -1,4 +1,9 @@
+// Add the "use client" directive at the top of the file
+// @ts-nocheck
 "use client";
+
+import React from 'react';
+import { createContext } from 'recoil';
 import Navbar from "@/components/shared/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -7,10 +12,7 @@ import Footer from "@/components/shared/Footer";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 
-import Banner from "@/components/shared/Banner";
-import { RecoilRoot } from "recoil";
-import Sidebar from "@/components/shared/Sidebar";
-//import Row from '@/components/UI/Row';
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,16 +24,11 @@ export default function RootLayout({ children }: { children: any }) {
     <Provider store={store}>
       <html data-theme="black" lang="en">
         <body className="">
-  
-            <RecoilRoot>
-            
-              <Navbar></Navbar>
-              
-              
-              {children}
-              <Footer></Footer>
-            </RecoilRoot>
-     
+      
+            <Navbar></Navbar>
+            {children}
+            <Footer></Footer>
+          
         </body>
       </html>
     </Provider>
