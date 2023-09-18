@@ -4,6 +4,7 @@ import { baseUrl } from '../../../constants/movieUrl';
 import { Movie } from '../../../utills/Typing';
 import { StarIcon } from '@heroicons/react/solid'; // Importing the Heroicons StarIcon
 import Link from 'next/link';
+import { FaImdb } from 'react-icons/fa';
 
 const Thumbnail = ({ movie,id }: { movie: Movie,id:number }) => {
   console.log(movie);
@@ -24,14 +25,14 @@ const Thumbnail = ({ movie,id }: { movie: Movie,id:number }) => {
         <div className="p-4 h-1/3 flex flex-col justify-between">
           <p className="text-black font-semibold">{movie.title}</p>
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <StarIcon className="h-5 w-5 text-yellow-400" /> {/* StarIcon for IMDb */}
-              <p className="ml-1 text-gray-600">{movie.vote_average}</p> {/* Vote average data */}
-              
-            </div>
+          <div className="flex items-center space-x-2 text-white">
+                            <FaImdb size={32} className="text-yellow-500" />
+                            <p className=" font-bold  text-black">{movie.vote_average}</p>
+                        </div>
         
           </div>
-          <p className="ml-1 text-gray-600">{movie.release_date}</p> {/* Vote average data */}
+          <p className="text-black font-semibold"> {movie.overview.slice(0, 80)}...</p>
+         
         </div>
       </div>
     </div>

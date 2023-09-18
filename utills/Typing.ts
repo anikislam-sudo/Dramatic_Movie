@@ -4,7 +4,8 @@ export interface Genre {
 }
 
 export interface Movie {
-    adult: boolean;
+
+  adult: boolean;
     backdrop_path: string;
     genre_ids: number[];
     id: number;
@@ -24,6 +25,7 @@ export interface Movie {
     homepage:string
     number_of_episodes:number
     number_of_seasons:number
+    original_name:string
 }
 export type MovieArray = Movie[];
 export interface Element {

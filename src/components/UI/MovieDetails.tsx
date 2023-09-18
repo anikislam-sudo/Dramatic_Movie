@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { Movie } from "../../../utills/Typing";
 import { baseUrl } from "../../../constants/movieUrl";
-import { FaPlay } from "react-icons/fa";
+import { FaImdb, FaPlay } from "react-icons/fa";
 import { PlusCircleIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
 const MovieDetails = ({ data, id }: { data: Movie, id: number }) => {
-  const { title, original_title, backdrop_path, poster_path, overview, homepage } = data;
+  const { title, original_title,vote_average, backdrop_path, poster_path, overview, homepage } = data;
 
   // Define the gradient background style
   const gradientBackground = {
@@ -19,9 +19,12 @@ const MovieDetails = ({ data, id }: { data: Movie, id: number }) => {
   return (
     <div className="relative h-[95vh] w-screen" style={gradientBackground}>
       <div className="container mx-auto flex flex-col space-y-2 py-4 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
-        <h1 className="text-2xl font-bold md:text-4xl lg:text-5xl text-white">{title}</h1>
+        <h1 className=" titles text-2xl font-bold md:text-4xl lg:text-5xl text-white">{title}</h1>
         <p className="max-w-xs text-sm sm:pt-2 text-shadow-md md:max-w-lg md:text-lg lg:max-w-4xl lg:text-lg text-white">{overview}</p>
-
+        <div className="flex items-center space-x-2 text-white">
+                            <FaImdb size={64} className="text-yellow-500" />
+                            <p className=" text-2xl font-bold md:text-4xl lg:text-5xl">{vote_average}</p>
+                        </div>
         <div className="flex flex-col space-y-3 mt-4 md:flex-row md:space-x-3 md:items-center">
           <Link href={homepage}>
             <button className="w-full md:w-auto flex items-center justify-center rounded-full bannerButton bg-[#5436A9] text-white">

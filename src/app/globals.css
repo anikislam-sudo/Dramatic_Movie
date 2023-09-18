@@ -43,4 +43,9 @@ div::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
+@media (max-width: 640px) {
+  .titles {
+   margin-top: 100px;
+  }
+}
 

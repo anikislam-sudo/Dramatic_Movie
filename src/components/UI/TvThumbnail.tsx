@@ -3,6 +3,7 @@ import React from 'react';
 import { baseUrl } from '../../../constants/movieUrl';
 import { Movie } from '../../../utills/Typing';
 import { StarIcon } from '@heroicons/react/solid'; // Import the StarIcon from heroicons
+import { FaImdb } from 'react-icons/fa';
 
 const TvThumbnail = ({ tv,id }: { tv: Movie,id:number }) => {
   return (
@@ -19,14 +20,13 @@ const TvThumbnail = ({ tv,id }: { tv: Movie,id:number }) => {
         <div className="p-4 h-1/3 flex flex-col justify-between">
           <p className="text-black font-semibold">{tv.name}</p>
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <StarIcon className="h-5 w-5 text-yellow-400" /> {/* StarIcon for IMDb */}
-              <p className="ml-1 text-gray-600">{tv.vote_average}</p> 
-              
-            </div>
+          <div className="flex items-center space-x-2 text-white">
+                            <FaImdb size={32} className="text-yellow-500" />
+                            <p className=" font-bold  text-black">{tv.vote_average}</p>
+                        </div>
         
           </div>
-          <p className="ml-1 text-gray-600">{tv.first_air_date}</p> 
+          <p className="text-black font-semibold"> {tv.overview.slice(0, 80)}...</p>
         </div>
       </div>
     </div>
