@@ -11,7 +11,7 @@ export const apiSlice = createApi({
     getMovies: builder.query({
       query: () => {
         return {
-          url: `/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          url: `/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_ID}`,
           method: "get",
         };
       },
@@ -19,7 +19,7 @@ export const apiSlice = createApi({
     getTVSeries: builder.query({
       query: () => {
         return {
-          url: `/discover/tv?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          url: `/discover/tv?api_key=${process.env.NEXT_PUBLIC_API_ID}`,
           method: "get",
         };
       },
@@ -27,7 +27,7 @@ export const apiSlice = createApi({
     getMovieDetails: builder.query({
       query: (id: string) => {
         return {
-          url: `/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          url: `/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_ID}`,
           method: "get",
         };
       },
@@ -35,7 +35,7 @@ export const apiSlice = createApi({
     getTvDetails: builder.query({
       query: (id: string) => {
         return {
-          url: `/tv/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+          url: `/tv/${id}?api_key=${process.env.NEXT_PUBLIC_API_ID}`,
           method: "get",
         };
       },
@@ -43,4 +43,9 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useGetMoviesQuery, useGetTVSeriesQuery,useGetMovieDetailsQuery,useGetTvDetailsQuery } = apiSlice;
+export const {
+  useGetMoviesQuery,
+  useGetTVSeriesQuery,
+  useGetMovieDetailsQuery,
+  useGetTvDetailsQuery,
+} = apiSlice;

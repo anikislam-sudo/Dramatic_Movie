@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "daisyui": "^3.7.4",
-    "tailwindcss-textshadow": "^2.1.3"
+    "tailwindcss-textshadow": "^2.1.3",
+    "wrangler": "^3.8.0"
   }
 }
